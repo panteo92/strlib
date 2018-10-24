@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js build
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev cross-dev
 
 PATH: 
   C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Users\mpandolfi\AppData\Local\Programs\Python\Python37;C:\Users\mpandolfi\AppData\Local\Programs\Python\Python37\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\vim\vim80;C:\Users\mpandolfi\AppData\Local\Microsoft\WindowsApps;C:\Users\mpandolfi\AppData\Local\atom\bin;C:\Users\mpandolfi\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Users\mpandolfi\AppData\Local\Yarn\bin;C:\Users\mpandolfi\AppData\Roaming\npm
@@ -14,24 +14,27 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\mpandolfi\Code\yarnTest\package.json: Unexpected string in JSON at position 219
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1136:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
+  Error: https://registry.yarnpkg.com/cross-dev: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:60182:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:120166:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:121138:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:121060:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1092:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
-    "name": "yarnTest",
+    "name": "strlib",
     "version": "1.0.0",
     "description": "Testing Yarn Package Manager",
     "main": "index.js",
     "scripts": {
-      "test": "BABEL_ENV=test ava",
-      "build": "BABEL_ENV=build rollup -c"
-      }
-    }
+      "test": "BABEL_ENV=test ava"
+    },
     "ava": {
       "files": [
         "test/*.js"
@@ -40,7 +43,7 @@ npm manifest:
         "src/*.{js}",
         "!dist/**/*"
       ],
-      "tap": true,
+      "tap":true,
       "require": "babel-register",
       "babel": "inherit"
     },
@@ -52,9 +55,7 @@ npm manifest:
       "ava": "^0.25.0",
       "babel-core": "6.24.1",
       "babel-plugin-external-helpers": "6.22.0",
-      "babel-preset-env": "1.4.0",
-      "rollup-plugin-babel": "2.7.1",
-      "rollup-watch": "3.2.2"
+      "babel-preset-env": "1.4.0"
     }
   }
 
@@ -653,31 +654,6 @@ Lockfile:
       esutils "^2.0.2"
       js-tokens "^3.0.2"
   
-  babel-core@6, babel-core@^6.17.0, babel-core@^6.26.0:
-    version "6.26.3"
-    resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.3.tgz#b2e2f09e342d0f0c88e2f02e067794125e75c207"
-    integrity sha512-6jyFLuDmeidKmUEb3NM+/yawG0M2bDZ9Z1qbZP59cyHLz8kYGKYwpJP0UwUKKUiTRNvxfLesJnTedqczP7cTDA==
-    dependencies:
-      babel-code-frame "^6.26.0"
-      babel-generator "^6.26.0"
-      babel-helpers "^6.24.1"
-      babel-messages "^6.23.0"
-      babel-register "^6.26.0"
-      babel-runtime "^6.26.0"
-      babel-template "^6.26.0"
-      babel-traverse "^6.26.0"
-      babel-types "^6.26.0"
-      babylon "^6.18.0"
-      convert-source-map "^1.5.1"
-      debug "^2.6.9"
-      json5 "^0.5.1"
-      lodash "^4.17.4"
-      minimatch "^3.0.4"
-      path-is-absolute "^1.0.1"
-      private "^0.1.8"
-      slash "^1.0.0"
-      source-map "^0.5.7"
-  
   babel-core@6.24.1:
     version "6.24.1"
     resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.24.1.tgz#8c428564dce1e1f41fb337ec34f4c3b022b5ad83"
@@ -702,6 +678,31 @@ Lockfile:
       private "^0.1.6"
       slash "^1.0.0"
       source-map "^0.5.0"
+  
+  babel-core@^6.17.0, babel-core@^6.26.0:
+    version "6.26.3"
+    resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.3.tgz#b2e2f09e342d0f0c88e2f02e067794125e75c207"
+    integrity sha512-6jyFLuDmeidKmUEb3NM+/yawG0M2bDZ9Z1qbZP59cyHLz8kYGKYwpJP0UwUKKUiTRNvxfLesJnTedqczP7cTDA==
+    dependencies:
+      babel-code-frame "^6.26.0"
+      babel-generator "^6.26.0"
+      babel-helpers "^6.24.1"
+      babel-messages "^6.23.0"
+      babel-register "^6.26.0"
+      babel-runtime "^6.26.0"
+      babel-template "^6.26.0"
+      babel-traverse "^6.26.0"
+      babel-types "^6.26.0"
+      babylon "^6.18.0"
+      convert-source-map "^1.5.1"
+      debug "^2.6.9"
+      json5 "^0.5.1"
+      lodash "^4.17.4"
+      minimatch "^3.0.4"
+      path-is-absolute "^1.0.1"
+      private "^0.1.8"
+      slash "^1.0.0"
+      source-map "^0.5.7"
   
   babel-generator@^6.1.0, babel-generator@^6.24.1, babel-generator@^6.26.0:
     version "6.26.1"
@@ -918,7 +919,7 @@ Lockfile:
       babel-types "^6.26.0"
       lodash "^4.17.4"
   
-  babel-plugin-transform-es2015-classes@^6.23.0, babel-plugin-transform-es2015-classes@^6.9.0:
+  babel-plugin-transform-es2015-classes@^6.23.0:
     version "6.24.1"
     resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-classes/-/babel-plugin-transform-es2015-classes-6.24.1.tgz#5a4c58a50c9c9461e564b4b2a3bfabc97a2584db"
     integrity sha1-WkxYpQyclGHlZLSyo7+ryXolhNs=
@@ -1787,11 +1788,6 @@ Lockfile:
     version "4.2.0"
     resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
     integrity sha1-De4/7TH81GlhjOc0IJn8GvoL2xM=
-  
-  estree-walker@^0.2.1:
-    version "0.2.1"
-    resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
-    integrity sha1-va/oCVOD2EFNXcLs9MkXO225QS4=
   
   esutils@^2.0.2:
     version "2.0.2"
@@ -3569,11 +3565,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/require-precompiled/-/require-precompiled-0.1.0.tgz#5a1b52eb70ebed43eb982e974c85ab59571e56fa"
     integrity sha1-WhtS63Dr7UPrmC6XTIWrWVceVvo=
   
-  require-relative@0.8.7:
-    version "0.8.7"
-    resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
-    integrity sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=
-  
   resolve-cwd@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -3610,31 +3601,6 @@ Lockfile:
     integrity sha512-lreewLK/BlghmxtfH36YYVg1i8IAce4TI7oao75I1g245+6BctqTVQiBP3YUJ9C6DQOXJmkYR9X9fCLtCOJc5w==
     dependencies:
       glob "^7.0.5"
-  
-  rollup-plugin-babel@2.7.1:
-    version "2.7.1"
-    resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-2.7.1.tgz#16528197b0f938a1536f44683c7a93d573182f57"
-    integrity sha1-FlKBl7D5OKFTb0RoPHqT1XMYL1c=
-    dependencies:
-      babel-core "6"
-      babel-plugin-transform-es2015-classes "^6.9.0"
-      object-assign "^4.1.0"
-      rollup-pluginutils "^1.5.0"
-  
-  rollup-pluginutils@^1.5.0:
-    version "1.5.2"
-    resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
-    integrity sha1-HhVud4+UtyVb+hs9AXi+j1xVJAg=
-    dependencies:
-      estree-walker "^0.2.1"
-      minimatch "^3.0.2"
-  
-  rollup-watch@3.2.2:
-    version "3.2.2"
-    resolved "https://registry.yarnpkg.com/rollup-watch/-/rollup-watch-3.2.2.tgz#5e574232e9ef36da9177f46946d8080cb267354b"
-    integrity sha1-XldCMunvNtqRd/RpRtgIDLJnNUs=
-    dependencies:
-      require-relative "0.8.7"
   
   safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
     version "5.1.2"
