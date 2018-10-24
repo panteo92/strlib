@@ -1,0 +1,12 @@
+{
+  "name": "yarnTest",
+  "version": "1.0.0",
+  "description": "Testing Yarn Package Manager",
+  "main": "index.js",
+  "author": "Matteo Pandolfi",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
